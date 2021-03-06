@@ -12,7 +12,7 @@
     <artifactId>redis-lua-limit</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>redis-lua-limit</name>
-    <description>基于Spring Boot Redis+Lua高并发限流</description>
+    <description>基于Spring Boot Redis+Lua高并发分布式限流器</description>
 
     <properties>
         <java.version>1.8</java.version>

@@ -29,7 +29,7 @@ public class Commons {
     @Bean
     public DefaultRedisScript<Long> redisBucketLuaScript() {
         DefaultRedisScript<Long> redisScript = new DefaultRedisScript<>();
-        redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("RedisBucketLimit.lua")));
+        redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("redis-bucket-limit.lua")));
         redisScript.setResultType(Long.class);
         return redisScript;
     }
@@ -42,7 +42,7 @@ public class Commons {
     @Bean
     public DefaultRedisScript<Long> redisCounterLuaScript() {
         DefaultRedisScript<Long> redisScript = new DefaultRedisScript<>();
-        redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("redisCounterLimit.lua")));
+        redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("redis-counter-limit.lua")));
         redisScript.setResultType(Long.class);
         return redisScript;
     }
