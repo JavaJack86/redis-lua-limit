@@ -20,8 +20,8 @@ public class ControllerExceptionHandler {
     @ExceptionHandler({LimitException.class})
     @ResponseBody
     public ResponseEntity redisLimitException(LimitException e) {
-        log.error("已经到设置限流次数!!!");
-        return new ResponseEntity<>("请求太频繁,已到限流次数!!!", HttpStatus.OK);
+        log.error(e.getMessage());
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.OK);
     }
 
 }

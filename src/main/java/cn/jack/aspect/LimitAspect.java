@@ -41,7 +41,6 @@ public class LimitAspect {
 
     @Around("execution(* cn.jack.controller ..*(..) )")
     public Object interceptor(ProceedingJoinPoint joinPoint) throws Throwable {
-
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
         CounterLimit counterLimit = method.getAnnotation(CounterLimit.class);
@@ -56,11 +55,7 @@ public class LimitAspect {
                 log.info("限流时间段内访问第：{} 次", counter);
                 return joinPoint.proceed();
             }
-
         } else if (bucketLimit != null) {
-            //key 可以但不限于以下的情况
-            //ip + 接口
-            //user_id + 接口
             String key = bucketLimit.key();
             Long tokenCount = redisTemplate.execute(redisBucketLuaScript, Lists.newArrayList(key),
                     bucketLimit.intervalTime(), System.currentTimeMillis(), bucketLimit.initTokens(), bucketLimit.maxCapacity(), bucketLimit.resetBucketInterval());
@@ -71,7 +66,7 @@ public class LimitAspect {
         } else {
             return joinPoint.proceed();
         }
-        throw new LimitException("已经到设置限流次数");
+        throw new LimitException("已经达到设置限流次数!");
     }
 
 }
