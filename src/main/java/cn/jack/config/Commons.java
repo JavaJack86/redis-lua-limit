@@ -13,7 +13,7 @@ import org.springframework.scripting.support.ResourceScriptSource;
 import java.io.Serializable;
 
 /**
- * @author CodeJack
+ * @author MysteryJack
  * 公众号: Java菜鸟程序员
  * @date 2021/3/5
  * @Description:配置lua信息以及RedisTemplate

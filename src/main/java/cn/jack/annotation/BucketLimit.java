@@ -3,7 +3,7 @@ package cn.jack.annotation;
 import java.lang.annotation.*;
 
 /**
- * @author CodeJack
+ * @author MysteryJack
  * 公众号: Java菜鸟程序员
  * @date 2021/3/5
  * @Description:令牌桶限流

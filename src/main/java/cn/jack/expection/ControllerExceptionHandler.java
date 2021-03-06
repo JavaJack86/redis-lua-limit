@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author CodeJack
+ * @author MysteryJack
  * 公众号: Java菜鸟程序员
  * @date 2021/3/5
  * @Description:异常处理
